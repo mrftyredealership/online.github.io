@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Pending</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/slick-loader@1.1.20/slick-loader.min.css">
+<script src="https://unpkg.com/slick-loader@1.1.20/slick-loader.min.js"></script>
+<script type="text/javascript">
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  }, false);
+</script>
+
+<script type="text/javascript">
+  document.addEventListener("keydown", function(e) {
+    if (e.ctrlKey && e.keyCode == 67) { // Ctrl+C
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.keyCode == 65) { // Ctrl+A
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.keyCode == 88) { // Ctrl+X
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.keyCode == 85) { // Ctrl+U
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.keyCode == 83) { // Ctrl+S
+      e.preventDefault();
+    }
+    if (e.ctrlKey && e.keyCode == 80) { // Ctrl+P
+      e.preventDefault();
+    }
+  });
+</script>
+
+
+<style>
+
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  height: 100%;
+  max-width: none;
+}
+
+</style>
+
+  </head>
+  <body>
+    <div class="image-container">
+      <img src="./payment_failed.png" alt="Full-screen image">
+    </div>
+
+    <script>
+ 
+       // Enable the loader
+SlickLoader.enable();
+
+// Show alert after 5 minutes (300000 milliseconds)
+setTimeout(function() {
+  alert("Transaction fails due to some technical issues");
+}, 5000);
+
+        
+        </script>
+
+
+  </body>
+</html>

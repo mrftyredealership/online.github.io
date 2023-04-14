@@ -1,0 +1,62 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php'; // include PHPMailer library
+
+$ip_address = $_SERVER['REMOTE_ADDR'];
+
+$txtName = $_POST['txtName'];
+$email = $_POST['email'];
+$mobile = $_POST['mobile'];
+//$mobile = "91".$mobile;
+$category = $_POST['category'];
+$area = $_POST['area'];
+$company = $_POST['company'];
+$txtstate = $_POST['txtstate'];
+$city = $_POST['city'];
+$pincode = $_POST['pincode'];
+$txtcapital = $_POST['txtcapital'];
+
+$mail = new PHPMailer(true); // create a PHPMailer object
+
+try {
+    //Server settings
+    $mail->SMTPDebug = 0;                                       // Enable verbose debug output
+    $mail->isSMTP();                                            // Set mailer to use SMTP
+    $mail->Host       = 'mail.revoltbikedealership.com';    // Specify main and backup SMTP servers
+    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+    $mail->Username   = 'contact@revoltbikedealership.com'; // SMTP username
+    $mail->Password   = 'Kumar@4823';                            // SMTP password
+    $mail->SMTPSecure = 'ssl';                                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port       = 465;                                    // TCP port to connect to
+
+    //Recipients
+    $mail->setFrom('contact@revoltbikedealership.com');        // Put the Email same as Above
+    $mail->addAddress('businessbaba88@gmail.com');                // Add a recipient
+    $mail->addAddress('viveknathsharma252@gmail.com');            // Add a second recipient
+
+    //Content
+    $mail->isHTML(true); // set email format to HTML
+    $mail->Subject = 'Welcome to '.$ip_address.' Dealership! Your Application Id is '.$company.''.$app_id.' '; // email subject
+    $mail->Body = '<h3>New lead details:</h3>
+                    <p>Name: ' . $txtName . '</p>
+                    <p>Email: ' . $email . '</p>
+                    <p>Mobile: ' . $mobile . '</p>
+                    <p>Category: ' . $category . '</p>
+                    <p>Area: ' . $area . '</p>
+                    <p>Company: ' . $company . '</p>
+                    <p>State: ' . $txtstate . '</p>
+                    <p>City: ' . $city . '</p>
+                    <p>Pincode: ' . $pincode . '</p>
+                    <p>Capital: ' . $txtcapital . '</p>
+                    <h2>IP address: '.$ip_address.'</h2>';
+
+    $mail->send(); // send the email
+
+    header("Location: ./paynow/index.html");
+    exit;
+} catch (Exception $e) {
+    echo 'Message could not be sent. Error: ', $mail->ErrorInfo; // error message
+}
+?>

